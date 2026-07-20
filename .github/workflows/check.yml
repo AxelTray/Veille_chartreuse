@@ -1,0 +1,47 @@
+name: Verification disponibilite Chartreuse
+
+on:
+  schedule:
+    # 19:00 et 20:00 UTC couvrent 21:00 heure de Paris hiver (UTC+1) et ete (UTC+2)
+    - cron: "0 19 * * *"
+    - cron: "0 20 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Forcer l'execution meme si ce n'est pas ~21h a Paris"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run availability check
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.force }}" = "true" ]; then
+            python scripts/check_availability.py --force
+          else
+            python scripts/check_availability.py
+          fi
+
+      - name: Commit updated status
+        run: |
+          git config user.name "chartreuse-bot"
+          git config user.email "actions@github.com"
+          git add docs/status.json docs/history.json
+          git diff --cached --quiet && echo "Rien a committer" || git commit -m "Mise a jour disponibilite Chartreuse"
+          git push

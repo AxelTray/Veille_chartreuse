@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veille Chartreuse</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f6f3ec;
+    --card-bg: #ffffff;
+    --ink: #2b2416;
+    --muted: #6b6152;
+    --border: #e4ddcc;
+    --green: #2f7a3d;
+    --green-bg: #e6f4e6;
+    --red: #a3352b;
+    --red-bg: #fbe8e6;
+    --amber: #9a6d0f;
+    --amber-bg: #fbf0dd;
+    --gray: #6b6152;
+    --gray-bg: #ececE4;
+    --accent: #4c7a3f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16150f;
+      --card-bg: #211f17;
+      --ink: #f1ecdd;
+      --muted: #a99f8b;
+      --border: #35311f;
+      --green: #7fd28c;
+      --green-bg: #1c2b1c;
+      --red: #ff8f83;
+      --red-bg: #2e1c1a;
+      --amber: #e8c27a;
+      --amber-bg: #2e2612;
+      --gray: #a99f8b;
+      --gray-bg: #26241a;
+      --accent: #8fbf7a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+  }
+  header {
+    padding: 2.5rem 1.5rem 1.5rem;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0 0 0.4rem;
+    font-size: 1.9rem;
+    letter-spacing: 0.02em;
+  }
+  header p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  .meta-bar {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+  }
+  .target-section {
+    margin-bottom: 2.5rem;
+  }
+  .target-section h2 {
+    font-size: 1.2rem;
+    margin: 0 0 0.9rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 0.9rem;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+  .card .site-name {
+    font-weight: 600;
+    font-size: 0.98rem;
+  }
+  .badge {
+    align-self: flex-start;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .badge.disponible { color: var(--green); background: var(--green-bg); }
+  .badge.rupture { color: var(--red); background: var(--red-bg); }
+  .badge.a_verifier { color: var(--amber); background: var(--amber-bg); }
+  .badge.non_trouve { color: var(--gray); background: var(--gray-bg); }
+  .badge.erreur { color: var(--red); background: var(--red-bg); }
+  .card a {
+    font-size: 0.85rem;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .card a:hover { text-decoration: underline; }
+  .empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--muted);
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+  }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.8rem;
+    padding: 1.5rem;
+  }
+  .pulse {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    margin-right: 0.4rem;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>🟡 Veille Chartreuse</h1>
+  <p>Jaune VEP · Reine des Liqueurs · Jéroboam — chez les distributeurs européens</p>
+  <div class="meta-bar">
+    <span id="last-checked">Dernière vérification : chargement…</span>
+    <span id="next-check">Prochaine vérification : tous les jours à 21h (heure de Paris)</span>
+  </div>
+</header>
+<main id="main"></main>
+<footer>
+  Généré automatiquement via GitHub Actions · statuts heuristiques, vérifie toujours le lien avant d'acheter.
+</footer>
+<script>
+const STATUS_LABELS = {
+  disponible: "Disponible",
+  rupture: "Rupture de stock",
+  a_verifier: "À vérifier",
+  non_trouve: "Non trouvé",
+  erreur: "Erreur de vérification",
+};
+
+function timeAgo(iso) {
+  if (!iso) return "jamais";
+  const d = new Date(iso);
+  return d.toLocaleString("fr-FR", { dateStyle: "medium", timeStyle: "short" });
+}
+
+async function load() {
+  const main = document.getElementById("main");
+  try {
+    const res = await fetch("status.json", { cache: "no-store" });
+    const data = await res.json();
+
+    document.getElementById("last-checked").textContent =
+      "Dernière vérification : " + timeAgo(data.checked_at);
+
+    if (!data.results || data.results.length === 0) {
+      main.innerHTML = '<div class="empty-state">Pas encore de données. Le premier check tournera à 21h (heure de Paris), ou lance le workflow manuellement depuis l\'onglet Actions.</div>';
+      return;
+    }
+
+    const byTarget = {};
+    for (const r of data.results) {
+      if (!byTarget[r.target_label]) byTarget[r.target_label] = [];
+      byTarget[r.target_label].push(r);
+    }
+
+    main.innerHTML = "";
+    for (const [label, items] of Object.entries(byTarget)) {
+      const section = document.createElement("section");
+      section.className = "target-section";
+
+      const anyAvailable = items.some(i => i.status === "disponible");
+      section.innerHTML = `<h2>${anyAvailable ? '<span class="pulse"></span>' : ""}${label}</h2>`;
+
+      const grid = document.createElement("div");
+      grid.className = "grid";
+      for (const item of items) {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <span class="site-name">${item.site}</span>
+          <span class="badge ${item.status}">${STATUS_LABELS[item.status] || item.status}</span>
+          <a href="${item.url}" target="_blank" rel="noopener">Voir la page →</a>
+        `;
+        grid.appendChild(card);
+      }
+      section.appendChild(grid);
+      main.appendChild(section);
+    }
+  } catch (err) {
+    main.innerHTML = '<div class="empty-state">Impossible de charger le statut pour le moment.</div>';
+    console.error(err);
+  }
+}
+
+load();
+setInterval(load, 5 * 60 * 1000);
+</script>
+</body>
+</html>

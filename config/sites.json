@@ -1,0 +1,61 @@
+{
+  "targets": [
+    {
+      "key": "vep_jaune",
+      "label": "Chartreuse Jaune VEP",
+      "keywords": ["jaune vep", "vep jaune", "yellow vep"]
+    },
+    {
+      "key": "reine_des_liqueurs",
+      "label": "Reine des Liqueurs",
+      "keywords": ["reine des liqueurs"]
+    },
+    {
+      "key": "jeroboam",
+      "label": "Jéroboam (toutes couleurs)",
+      "keywords": ["jeroboam chartreuse", "chartreuse jeroboam", "jeroboam"]
+    }
+  ],
+  "sites": [
+    {
+      "name": "La Belle Liqueur",
+      "base_url": "https://www.labelleliqueur.com",
+      "search_url": "https://www.labelleliqueur.com/recherche?q=chartreuse"
+    },
+    {
+      "name": "Chartreuse Diffusion (boutique officielle)",
+      "base_url": "https://www.chartreuse.fr",
+      "search_url": "https://www.chartreuse.fr/nos-produits/"
+    },
+    {
+      "name": "La Maison du Whisky",
+      "base_url": "https://www.whisky.fr",
+      "search_url": "https://www.whisky.fr/recherche?controller=search&s=chartreuse"
+    },
+    {
+      "name": "The Whisky Exchange",
+      "base_url": "https://www.thewhiskyexchange.com",
+      "search_url": "https://www.thewhiskyexchange.com/search?q=chartreuse"
+    },
+    {
+      "name": "Master of Malt",
+      "base_url": "https://www.masterofmalt.com",
+      "search_url": "https://www.masterofmalt.com/search/?q=chartreuse"
+    },
+    {
+      "name": "Whic (Allemagne)",
+      "base_url": "https://www.whic.de",
+      "search_url": "https://www.whic.de/search?q=chartreuse"
+    },
+    {
+      "name": "Vinatis",
+      "base_url": "https://www.vinatis.com",
+      "search_url": "https://www.vinatis.com/recherche?s=chartreuse"
+    },
+    {
+      "name": "Drinks&Co",
+      "base_url": "https://www.drinksandco.fr",
+      "search_url": "https://www.drinksandco.fr/recherche?text=chartreuse"
+    }
+  ]
+}
