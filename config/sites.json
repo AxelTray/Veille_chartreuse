@@ -73,6 +73,95 @@
       "site": "Vinum.pro",
       "url": "https://vinum.pro/boutique/spiritueux/liqueur-creme/chartreuse-1605/",
       "targets": ["vep_jaune", "reine_des_liqueurs", "jeroboam"]
+    },
+
+    {
+      "site": "Bottle of Italy — Reine des Liqueurs",
+      "url": "https://bottleofitaly.com/en/products/reine-des-liqueurs-2025-70cl-chartreuse",
+      "targets": ["reine_des_liqueurs"]
+    },
+    {
+      "site": "Bottle of Italy — Jaune Jéroboam 3L",
+      "url": "https://bottleofitaly.com/en-us/products/chartreuse-gialla-jeroboam-lt-3",
+      "targets": ["jeroboam"]
+    },
+    {
+      "site": "Gallienoteca (Italie) — VEP Jaune",
+      "url": "https://www.gallienoteca.it/it/7089-chartreuse-vep-jaune.html",
+      "targets": ["vep_jaune"]
+    },
+    {
+      "site": "Pedrelli (Italie) — VEP Jaune",
+      "url": "https://www.pedrelli.com/products/chartreuse-v-e-p-jaune",
+      "targets": ["vep_jaune"]
+    },
+
+    {
+      "site": "Gute-Weine / Lobenbergs (Allemagne) — VEP Jaune",
+      "url": "https://www.gute-weine.de/produkt/chartreuse-chartreuse-vep-jaune-gelb-kraeuterlikoer-68554h/",
+      "targets": ["vep_jaune"]
+    },
+    {
+      "site": "Bardealer (Allemagne) — VEP Jaune",
+      "url": "https://www.bardealer.de/likoere/chartreuse-vep-jaune-gelb-kraeuterlikoer-1000-ml-42",
+      "targets": ["vep_jaune"]
+    },
+    {
+      "site": "Kleine Abtei (Allemagne) — VEP Jaune",
+      "url": "https://www.kleine-abtei.de/chartreuse/vep-gelb-jaune/a-79060",
+      "targets": ["vep_jaune"]
+    },
+    {
+      "site": "Berlin Bottle (Allemagne) — VEP Jaune",
+      "url": "https://berlinbottle.de/Chartreuse-VEP-Jaune-gelb-Box-1000ml-42-Vol",
+      "targets": ["vep_jaune"]
+    },
+    {
+      "site": "Beowein (Allemagne) — VEP Jaune",
+      "url": "https://www.beowein.de/chartreuse-gelb-jaune-vep-10-l/",
+      "targets": ["vep_jaune"]
+    },
+
+    {
+      "site": "Magnum de Vin (Espagne) — Jéroboams",
+      "url": "https://www.magnumdevin.com/es/54-jeroboam-de-chartreuse",
+      "targets": ["jeroboam"]
+    },
+    {
+      "site": "Clos des Millésimes ES — Jéroboam VEP Jaune 2015",
+      "url": "https://www.closdesmillesimes.com/35341-clos-des-millesimes-jeroboam---amarillo-chartreuse-vep-envejecimiento-excepcionalmente-prolongado---anada-2015---42.html",
+      "targets": ["jeroboam"]
+    },
+    {
+      "site": "Vinoteca.online (Espagne) — Jaune Jéroboam",
+      "url": "https://vinoteca.online/es/digestivo-licores-y-alcohol/4574087-digestivo-chartreuse-groc-francia-botella-jeroboam-doble-magnum-3-l-3023480123004.html",
+      "targets": ["jeroboam"]
+    },
+    {
+      "site": "1898 Drinks Boutique (Espagne)",
+      "url": "https://www.1898drinksboutique.com/marca-comercial/chartreuse",
+      "targets": ["vep_jaune", "reine_des_liqueurs", "jeroboam"]
+    },
+
+    {
+      "site": "Caviar Alexandre (Suisse) — VEP Jaune",
+      "url": "https://www.caviaralexandre.com/product-page/chartreuse-vep-jaune",
+      "targets": ["vep_jaune"]
+    },
+    {
+      "site": "Le Caveau des Pépites — VEP Jaune (tous millésimes)",
+      "url": "https://lecaveaudespepites.com/products/chartreuse-vep-jaune-2025",
+      "targets": ["vep_jaune"]
+    },
+    {
+      "site": "Le Chais — VEP Jaune",
+      "url": "https://www.lechais.com/chartreuse-vep-jaune.html",
+      "targets": ["vep_jaune"]
+    },
+    {
+      "site": "Calais Vins — VEP Jaune",
+      "url": "https://www.calais-vins.com/bouteilles-de-prestige/3105-chartreuse-jaune-vep-1l-coffret-bois.html",
+      "targets": ["vep_jaune"]
     }
   ]
 }

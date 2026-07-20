@@ -99,6 +99,13 @@ def fetch(url: str) -> str | None:
     try:
         resp = SESSION.get(url, timeout=20)
         resp.raise_for_status()
+        # Certains sites ne declarent pas leur charset dans l'entete HTTP ;
+        # requests retombe alors sur ISO-8859-1 par defaut (RFC 2616) et les
+        # caracteres accentues (site suisse observe: "Ã©" au lieu de "é")
+        # cassent la comparaison de mots-cles. La detection automatique est
+        # plus fiable pour du HTML europeen.
+        if resp.encoding is None or resp.encoding.lower() == "iso-8859-1":
+            resp.encoding = resp.apparent_encoding or resp.encoding
         return resp.text
     except requests.RequestException as exc:
         print(f"  [erreur] {url} -> {exc}", file=sys.stderr)
@@ -161,14 +168,35 @@ def availability_to_status(availability: str) -> str | None:
     return None
 
 
-def find_matching_product(products: list[dict], keywords: list[str]) -> tuple[dict, str] | None:
+def find_matching_products(products: list[dict], keywords: list[str]) -> list[dict]:
+    """Renvoie TOUS les produits structures qui correspondent (pas juste le
+    premier) : une meme page peut lister plusieurs millesimes/couleurs de
+    Jeroboam ou de VEP, et on veut les voir tous sur le dashboard."""
+    matches = []
+    seen = set()
     for product in products:
-        name = product.get("name") or ""
+        name = (product.get("name") or "").strip()
         squashed_name = squash(name)
-        for kw in keywords:
-            if squash(kw) in squashed_name:
-                return product, kw
-    return None
+        matched_kw = next((kw for kw in keywords if squash(kw) in squashed_name), None)
+        if not matched_kw:
+            continue
+        price, currency, availability = product_price_and_availability(product)
+        status = availability_to_status(availability)
+        if status is None and price is None:
+            continue  # bloc structure sans info exploitable -> pas utile
+        dedup_key = (name.lower(), price)
+        if dedup_key in seen:
+            continue
+        seen.add(dedup_key)
+        matches.append({
+            "status": status or "a_verifier",
+            "matched_keyword": matched_kw,
+            "product_name": name or None,
+            "price": price,
+            "currency": currency or ("EUR" if price is not None else None),
+            "confidence": "structure",
+        })
+    return matches
 
 
 def extract_price_heuristic(scope: str) -> float | None:
@@ -217,6 +245,7 @@ def analyze_heuristic(html: str, keywords: list[str]) -> dict:
         return {
             "status": status,
             "matched_keyword": kw,
+            "product_name": None,
             "price": price,
             "currency": "EUR" if price is not None else None,
             "confidence": "heuristique",
@@ -224,31 +253,23 @@ def analyze_heuristic(html: str, keywords: list[str]) -> dict:
     return {
         "status": "non_trouve",
         "matched_keyword": "",
+        "product_name": None,
         "price": None,
         "currency": None,
         "confidence": "heuristique",
     }
 
 
-def analyze(html: str, keywords: list[str]) -> dict:
+def analyze(html: str, keywords: list[str]) -> list[dict]:
+    """Renvoie une LISTE de resultats : le plus souvent un seul, mais
+    potentiellement plusieurs si la page structuree liste plusieurs
+    variantes correspondant a la meme cible (plusieurs millesimes de VEP,
+    plusieurs couleurs de Jeroboam...)."""
     products = extract_structured_products(html)
-    match = find_matching_product(products, keywords)
-    if match:
-        product, kw = match
-        price, currency, availability = product_price_and_availability(product)
-        status = availability_to_status(availability)
-        # Si on n'a ni prix ni statut exploitable (ex: produit "reserve
-        # magasin" sans bloc offers), les donnees structurees n'apportent
-        # rien de plus que le repli heuristique -> on bascule dessus.
-        if status is not None or price is not None:
-            return {
-                "status": status or "a_verifier",
-                "matched_keyword": kw,
-                "price": price,
-                "currency": currency or ("EUR" if price is not None else None),
-                "confidence": "structure",
-            }
-    return analyze_heuristic(html, keywords)
+    matches = find_matching_products(products, keywords)
+    if matches:
+        return matches
+    return [analyze_heuristic(html, keywords)]
 
 
 def run_checks() -> list[dict]:
@@ -264,26 +285,29 @@ def run_checks() -> list[dict]:
         for target_key in watch["targets"]:
             target = targets[target_key]
             if html is None:
-                outcome = {
-                    "status": "erreur", "matched_keyword": "",
+                outcomes = [{
+                    "status": "erreur", "matched_keyword": "", "product_name": None,
                     "price": None, "currency": None, "confidence": "heuristique",
-                }
+                }]
             else:
-                outcome = analyze(html, target["keywords"])
-            results.append({
-                "site": watch["site"],
-                "url": watch["url"],
-                "target_key": target_key,
-                "target_label": target["label"],
-                "status": outcome["status"],
-                "matched_keyword": outcome["matched_keyword"],
-                "price": outcome["price"],
-                "currency": outcome["currency"],
-                "confidence": outcome["confidence"],
-                "checked_at": checked_at,
-            })
-            price_str = f" - {outcome['price']} {outcome['currency']}" if outcome["price"] else ""
-            print(f"  - {target['label']}: {outcome['status']} ({outcome['confidence']}){price_str}")
+                outcomes = analyze(html, target["keywords"])
+            for outcome in outcomes:
+                results.append({
+                    "site": watch["site"],
+                    "url": watch["url"],
+                    "target_key": target_key,
+                    "target_label": target["label"],
+                    "product_name": outcome["product_name"],
+                    "status": outcome["status"],
+                    "matched_keyword": outcome["matched_keyword"],
+                    "price": outcome["price"],
+                    "currency": outcome["currency"],
+                    "confidence": outcome["confidence"],
+                    "checked_at": checked_at,
+                })
+                price_str = f" - {outcome['price']} {outcome['currency']}" if outcome["price"] else ""
+                name_str = f" [{outcome['product_name']}]" if outcome["product_name"] else ""
+                print(f"  - {target['label']}{name_str}: {outcome['status']} ({outcome['confidence']}){price_str}")
     return results
 
 

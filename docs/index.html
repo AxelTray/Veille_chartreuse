@@ -210,6 +210,12 @@
     font-size: 0.94rem;
     line-height: 1.3;
   }
+  .product-name {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.3;
+    margin-top: -0.4rem;
+  }
 
   .confidence {
     flex: none;
@@ -340,6 +346,13 @@ const CONFIDENCE_TITLE = {
   heuristique: "Détection approximative par mots-clés — vérifie sur le site",
 };
 
+function escapeHtml(str) {
+  if (str === null || str === undefined) return "";
+  return String(str).replace(/[&<>"']/g, c => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+  }[c]));
+}
+
 function formatPrice(price, currency) {
   if (price === null || price === undefined) {
     return '<span class="price unknown">Prix non communiqué</span>';
@@ -404,14 +417,18 @@ async function load() {
         card.className = "card" + (item.status === "disponible" ? " is-available" : "");
         const confIcon = CONFIDENCE_ICON[item.confidence] || "~";
         const confTitle = CONFIDENCE_TITLE[item.confidence] || "";
+        const productNameHtml = item.product_name
+          ? `<span class="product-name">${escapeHtml(item.product_name)}</span>`
+          : "";
         card.innerHTML = `
           <div class="card-top">
-            <span class="site-name">${item.site}</span>
-            <span class="confidence ${item.confidence}" title="${confTitle}">${confIcon}</span>
+            <span class="site-name">${escapeHtml(item.site)}</span>
+            <span class="confidence ${item.confidence}" title="${escapeHtml(confTitle)}">${confIcon}</span>
           </div>
+          ${productNameHtml}
           <div class="price-row">${formatPrice(item.price, item.currency)}</div>
           <span class="badge ${item.status}">${STATUS_LABELS[item.status] || item.status}</span>
-          <a class="card-link" href="${item.url}" target="_blank" rel="noopener">Voir le produit →</a>
+          <a class="card-link" href="${encodeURI(item.url)}" target="_blank" rel="noopener">Voir le produit →</a>
         `;
         grid.appendChild(card);
       }
