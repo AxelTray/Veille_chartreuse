@@ -25,16 +25,6 @@
       "targets": ["vep_jaune", "reine_des_liqueurs", "jeroboam"]
     },
     {
-      "site": "Cave Spirituelle — VEP Jaune Jéroboam 3L",
-      "url": "https://www.cave-spirituelle.com/liqueur-chartreuse-vep-jaune-jeroboam-3-l.html",
-      "targets": ["jeroboam"]
-    },
-    {
-      "site": "Cave Spirituelle — VEP Verte Jéroboam 3L",
-      "url": "https://www.cave-spirituelle.com/liqueur-chartreuse-vep-verte-jeroboam-3-l.html",
-      "targets": ["jeroboam"]
-    },
-    {
       "site": "Cave Spirituelle — Reine des Liqueurs",
       "url": "https://www.cave-spirituelle.com/chartreuse-reine-des-liqueurs-mise-2024.html",
       "targets": ["reine_des_liqueurs"]

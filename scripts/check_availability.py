@@ -32,8 +32,22 @@ HEADERS = {
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
         "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
     ),
+    "Accept": (
+        "text/html,application/xhtml+xml,application/xml;q=0.9,"
+        "image/avif,image/webp,*/*;q=0.8"
+    ),
     "Accept-Language": "fr-FR,fr;q=0.9,en;q=0.8",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Upgrade-Insecure-Requests": "1",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "none",
+    "Sec-Fetch-User": "?1",
 }
+
+SESSION = requests.Session()
+SESSION.headers.update(HEADERS)
 
 UNAVAILABLE_PATTERNS = [
     "rupture de stock", "rupture", "epuise", "indisponible", "non disponible",
@@ -49,7 +63,7 @@ AVAILABLE_PATTERNS = [
     "derniere piece", "dernieres pieces",
 ]
 
-WINDOW = 260  # nombre de caracteres regardes avant/apres le mot-cle
+WINDOW = 450  # nombre de caracteres regardes avant/apres le mot-cle
 
 
 def strip_accents(text: str) -> str:
@@ -65,7 +79,7 @@ def is_paris_21h(now_utc: datetime) -> bool:
 
 def fetch(url: str) -> str | None:
     try:
-        resp = requests.get(url, headers=HEADERS, timeout=20)
+        resp = SESSION.get(url, timeout=20)
         resp.raise_for_status()
         return resp.text
     except requests.RequestException as exc:
@@ -73,19 +87,27 @@ def fetch(url: str) -> str | None:
         return None
 
 
-def analyze(html: str, keywords: list[str]) -> tuple[str, str]:
+def analyze(html: str, keywords: list[str], full_page: bool = False) -> tuple[str, str]:
+    """Si full_page=True (page dediee a un seul produit), on cherche les
+    signaux de stock sur toute la page plutot que juste autour du mot-cle :
+    sur une fiche produit, le bouton "ajouter au panier" ou le badge
+    "rupture de stock" peut etre loin du nom du produit en position dans le
+    HTML brut."""
     text = strip_accents(html.lower())
     for kw in keywords:
         kw_norm = strip_accents(kw.lower())
         idx = text.find(kw_norm)
         if idx == -1:
             continue
-        start = max(0, idx - WINDOW)
-        end = min(len(text), idx + len(kw_norm) + WINDOW)
-        window = text[start:end]
-        if any(p in window for p in UNAVAILABLE_PATTERNS):
+        if full_page:
+            scope = text
+        else:
+            start = max(0, idx - WINDOW)
+            end = min(len(text), idx + len(kw_norm) + WINDOW)
+            scope = text[start:end]
+        if any(p in scope for p in UNAVAILABLE_PATTERNS):
             return "rupture", kw
-        if any(p in window for p in AVAILABLE_PATTERNS):
+        if any(p in scope for p in AVAILABLE_PATTERNS):
             return "disponible", kw
         return "a_verifier", kw
     return "non_trouve", ""
@@ -101,12 +123,13 @@ def run_checks() -> list[dict]:
     for watch in watches:
         print(f"Verification: {watch['site']}")
         html = fetch(watch["url"])
+        full_page = len(watch["targets"]) == 1
         for target_key in watch["targets"]:
             target = targets[target_key]
             if html is None:
                 status, matched = "erreur", ""
             else:
-                status, matched = analyze(html, target["keywords"])
+                status, matched = analyze(html, target["keywords"], full_page=full_page)
             results.append({
                 "site": watch["site"],
                 "url": watch["url"],
