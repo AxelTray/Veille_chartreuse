@@ -1657,5 +1657,179 @@
         "checked_at": "2026-07-20T23:41:50.963529+02:00"
       }
     ]
+  },
+  {
+    "checked_at": "2026-07-20T23:45:13.213574+02:00",
+    "available_count": 0,
+    "results": [
+      {
+        "site": "Chartreuse Diffusion (officiel)",
+        "url": "https://www.chartreuse.fr/en/produit/chartreuse-vep-yellow/",
+        "target_key": "vep_jaune",
+        "target_label": "Chartreuse Jaune VEP",
+        "status": "a_verifier",
+        "matched_keyword": "vep jaune",
+        "price": null,
+        "currency": null,
+        "confidence": "heuristique",
+        "checked_at": "2026-07-20T23:45:13.213574+02:00"
+      },
+      {
+        "site": "La Compagnie des Bonnes Bouteilles — VEP Jaune",
+        "url": "https://lacompagniedesbonnesbouteilles.fr/produit/chartreuse-vep-jaune-2024-100-cl/",
+        "target_key": "vep_jaune",
+        "target_label": "Chartreuse Jaune VEP",
+        "status": "non_trouve",
+        "matched_keyword": "",
+        "price": null,
+        "currency": null,
+        "confidence": "heuristique",
+        "checked_at": "2026-07-20T23:45:13.213574+02:00"
+      },
+      {
+        "site": "La Compagnie des Bonnes Bouteilles — Reine des Liqueurs",
+        "url": "https://lacompagniedesbonnesbouteilles.fr/produit/chartreuse-reine-des-liqueurs-2025-70-cl/",
+        "target_key": "reine_des_liqueurs",
+        "target_label": "Reine des Liqueurs",
+        "status": "non_trouve",
+        "matched_keyword": "",
+        "price": null,
+        "currency": null,
+        "confidence": "heuristique",
+        "checked_at": "2026-07-20T23:45:13.213574+02:00"
+      },
+      {
+        "site": "Cave Spirituelle — Reine des Liqueurs",
+        "url": "https://www.cave-spirituelle.com/chartreuse-reine-des-liqueurs-mise-2024.html",
+        "target_key": "reine_des_liqueurs",
+        "target_label": "Reine des Liqueurs",
+        "status": "erreur",
+        "matched_keyword": "",
+        "price": null,
+        "currency": null,
+        "confidence": "heuristique",
+        "checked_at": "2026-07-20T23:45:13.213574+02:00"
+      },
+      {
+        "site": "Clos des Millésimes — Verte Jéroboam 3L",
+        "url": "https://www.closdesmillesimes.com/chartreuse-verte-jeroboam-mise-2025.html",
+        "target_key": "jeroboam",
+        "target_label": "Jéroboam (toutes couleurs)",
+        "status": "erreur",
+        "matched_keyword": "",
+        "price": null,
+        "currency": null,
+        "confidence": "heuristique",
+        "checked_at": "2026-07-20T23:45:13.213574+02:00"
+      },
+      {
+        "site": "Clos des Millésimes — VEP Jaune",
+        "url": "https://www.closdesmillesimes.com/chartreuse-vep-jaune-1-litre-mise-2024.html",
+        "target_key": "vep_jaune",
+        "target_label": "Chartreuse Jaune VEP",
+        "status": "erreur",
+        "matched_keyword": "",
+        "price": null,
+        "currency": null,
+        "confidence": "heuristique",
+        "checked_at": "2026-07-20T23:45:13.213574+02:00"
+      },
+      {
+        "site": "Rhône Magnum — Reine des Liqueurs",
+        "url": "https://venteenligne.rhone-magnum.fr/4403-liqueur-reine-des-liqueurs-2026-chartreuse-43-70cl",
+        "target_key": "reine_des_liqueurs",
+        "target_label": "Reine des Liqueurs",
+        "status": "a_verifier",
+        "matched_keyword": "reine des liqueurs",
+        "price": null,
+        "currency": null,
+        "confidence": "heuristique",
+        "checked_at": "2026-07-20T23:45:13.213574+02:00"
+      },
+      {
+        "site": "Rhône Magnum — VEP Jaune",
+        "url": "https://venteenligne.rhone-magnum.fr/1554-liqueur-jaune-vep-2024-chartreuse-42-100cl",
+        "target_key": "vep_jaune",
+        "target_label": "Chartreuse Jaune VEP",
+        "status": "a_verifier",
+        "matched_keyword": "jaune vep",
+        "price": null,
+        "currency": null,
+        "confidence": "heuristique",
+        "checked_at": "2026-07-20T23:45:13.213574+02:00"
+      },
+      {
+        "site": "Le Gros Caviste — VEP Jaune",
+        "url": "https://legroscaviste.com/les-spiriteux-aperitifs-et-digestifs/5433-chartreuse-vep-jaune-2025-1l.html",
+        "target_key": "vep_jaune",
+        "target_label": "Chartreuse Jaune VEP",
+        "status": "non_trouve",
+        "matched_keyword": "",
+        "price": null,
+        "currency": null,
+        "confidence": "heuristique",
+        "checked_at": "2026-07-20T23:45:13.213574+02:00"
+      },
+      {
+        "site": "Le Gros Caviste — Jaune Jéroboam 3L",
+        "url": "https://legroscaviste.com/liqueurs-et-cremes/4985-chartreuse-jaune-jeroboam-cuivre-3l-n-670.html",
+        "target_key": "jeroboam",
+        "target_label": "Jéroboam (toutes couleurs)",
+        "status": "non_trouve",
+        "matched_keyword": "",
+        "price": null,
+        "currency": null,
+        "confidence": "heuristique",
+        "checked_at": "2026-07-20T23:45:13.213574+02:00"
+      },
+      {
+        "site": "Whisky Lodge — Jéroboams (toutes couleurs)",
+        "url": "https://whiskylodge.com/en/507-chartreuse",
+        "target_key": "jeroboam",
+        "target_label": "Jéroboam (toutes couleurs)",
+        "status": "non_trouve",
+        "matched_keyword": "",
+        "price": null,
+        "currency": null,
+        "confidence": "heuristique",
+        "checked_at": "2026-07-20T23:45:13.213574+02:00"
+      },
+      {
+        "site": "Vinum.pro",
+        "url": "https://vinum.pro/boutique/spiritueux/liqueur-creme/chartreuse-1605/",
+        "target_key": "vep_jaune",
+        "target_label": "Chartreuse Jaune VEP",
+        "status": "non_trouve",
+        "matched_keyword": "",
+        "price": null,
+        "currency": null,
+        "confidence": "heuristique",
+        "checked_at": "2026-07-20T23:45:13.213574+02:00"
+      },
+      {
+        "site": "Vinum.pro",
+        "url": "https://vinum.pro/boutique/spiritueux/liqueur-creme/chartreuse-1605/",
+        "target_key": "reine_des_liqueurs",
+        "target_label": "Reine des Liqueurs",
+        "status": "non_trouve",
+        "matched_keyword": "",
+        "price": null,
+        "currency": null,
+        "confidence": "heuristique",
+        "checked_at": "2026-07-20T23:45:13.213574+02:00"
+      },
+      {
+        "site": "Vinum.pro",
+        "url": "https://vinum.pro/boutique/spiritueux/liqueur-creme/chartreuse-1605/",
+        "target_key": "jeroboam",
+        "target_label": "Jéroboam (toutes couleurs)",
+        "status": "non_trouve",
+        "matched_keyword": "",
+        "price": null,
+        "currency": null,
+        "confidence": "heuristique",
+        "checked_at": "2026-07-20T23:45:13.213574+02:00"
+      }
+    ]
   }
 ]

@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-07-20T23:41:50.963529+02:00",
+  "checked_at": "2026-07-20T23:45:13.213574+02:00",
   "results": [
     {
       "site": "Chartreuse Diffusion (officiel)",
@@ -11,67 +11,67 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-20T23:41:50.963529+02:00"
+      "checked_at": "2026-07-20T23:45:13.213574+02:00"
     },
     {
       "site": "La Compagnie des Bonnes Bouteilles — VEP Jaune",
       "url": "https://lacompagniedesbonnesbouteilles.fr/produit/chartreuse-vep-jaune-2024-100-cl/",
       "target_key": "vep_jaune",
       "target_label": "Chartreuse Jaune VEP",
-      "status": "rupture",
-      "matched_keyword": "vep jaune",
-      "price": 469.0,
-      "currency": "EUR",
-      "confidence": "structure",
-      "checked_at": "2026-07-20T23:41:50.963529+02:00"
+      "status": "non_trouve",
+      "matched_keyword": "",
+      "price": null,
+      "currency": null,
+      "confidence": "heuristique",
+      "checked_at": "2026-07-20T23:45:13.213574+02:00"
     },
     {
       "site": "La Compagnie des Bonnes Bouteilles — Reine des Liqueurs",
       "url": "https://lacompagniedesbonnesbouteilles.fr/produit/chartreuse-reine-des-liqueurs-2025-70-cl/",
       "target_key": "reine_des_liqueurs",
       "target_label": "Reine des Liqueurs",
-      "status": "rupture",
-      "matched_keyword": "reine des liqueurs",
-      "price": 419.0,
-      "currency": "EUR",
-      "confidence": "structure",
-      "checked_at": "2026-07-20T23:41:50.963529+02:00"
+      "status": "non_trouve",
+      "matched_keyword": "",
+      "price": null,
+      "currency": null,
+      "confidence": "heuristique",
+      "checked_at": "2026-07-20T23:45:13.213574+02:00"
     },
     {
       "site": "Cave Spirituelle — Reine des Liqueurs",
       "url": "https://www.cave-spirituelle.com/chartreuse-reine-des-liqueurs-mise-2024.html",
       "target_key": "reine_des_liqueurs",
       "target_label": "Reine des Liqueurs",
-      "status": "rupture",
-      "matched_keyword": "reine des liqueurs",
-      "price": 350.0,
-      "currency": "EUR",
-      "confidence": "structure",
-      "checked_at": "2026-07-20T23:41:50.963529+02:00"
+      "status": "erreur",
+      "matched_keyword": "",
+      "price": null,
+      "currency": null,
+      "confidence": "heuristique",
+      "checked_at": "2026-07-20T23:45:13.213574+02:00"
     },
     {
       "site": "Clos des Millésimes — Verte Jéroboam 3L",
       "url": "https://www.closdesmillesimes.com/chartreuse-verte-jeroboam-mise-2025.html",
       "target_key": "jeroboam",
       "target_label": "Jéroboam (toutes couleurs)",
-      "status": "disponible",
-      "matched_keyword": "jeroboam",
-      "price": 335.0,
-      "currency": "EUR",
-      "confidence": "structure",
-      "checked_at": "2026-07-20T23:41:50.963529+02:00"
+      "status": "erreur",
+      "matched_keyword": "",
+      "price": null,
+      "currency": null,
+      "confidence": "heuristique",
+      "checked_at": "2026-07-20T23:45:13.213574+02:00"
     },
     {
       "site": "Clos des Millésimes — VEP Jaune",
       "url": "https://www.closdesmillesimes.com/chartreuse-vep-jaune-1-litre-mise-2024.html",
       "target_key": "vep_jaune",
       "target_label": "Chartreuse Jaune VEP",
-      "status": "disponible",
-      "matched_keyword": "vep jaune",
-      "price": 290.0,
-      "currency": "EUR",
-      "confidence": "structure",
-      "checked_at": "2026-07-20T23:41:50.963529+02:00"
+      "status": "erreur",
+      "matched_keyword": "",
+      "price": null,
+      "currency": null,
+      "confidence": "heuristique",
+      "checked_at": "2026-07-20T23:45:13.213574+02:00"
     },
     {
       "site": "Rhône Magnum — Reine des Liqueurs",
@@ -83,7 +83,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-20T23:41:50.963529+02:00"
+      "checked_at": "2026-07-20T23:45:13.213574+02:00"
     },
     {
       "site": "Rhône Magnum — VEP Jaune",
@@ -95,43 +95,43 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-20T23:41:50.963529+02:00"
+      "checked_at": "2026-07-20T23:45:13.213574+02:00"
     },
     {
       "site": "Le Gros Caviste — VEP Jaune",
       "url": "https://legroscaviste.com/les-spiriteux-aperitifs-et-digestifs/5433-chartreuse-vep-jaune-2025-1l.html",
       "target_key": "vep_jaune",
       "target_label": "Chartreuse Jaune VEP",
-      "status": "a_verifier",
-      "matched_keyword": "vep jaune",
+      "status": "non_trouve",
+      "matched_keyword": "",
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-20T23:41:50.963529+02:00"
+      "checked_at": "2026-07-20T23:45:13.213574+02:00"
     },
     {
       "site": "Le Gros Caviste — Jaune Jéroboam 3L",
       "url": "https://legroscaviste.com/liqueurs-et-cremes/4985-chartreuse-jaune-jeroboam-cuivre-3l-n-670.html",
       "target_key": "jeroboam",
       "target_label": "Jéroboam (toutes couleurs)",
-      "status": "a_verifier",
-      "matched_keyword": "jeroboam",
+      "status": "non_trouve",
+      "matched_keyword": "",
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-20T23:41:50.963529+02:00"
+      "checked_at": "2026-07-20T23:45:13.213574+02:00"
     },
     {
       "site": "Whisky Lodge — Jéroboams (toutes couleurs)",
       "url": "https://whiskylodge.com/en/507-chartreuse",
       "target_key": "jeroboam",
       "target_label": "Jéroboam (toutes couleurs)",
-      "status": "a_verifier",
-      "matched_keyword": "jeroboam",
-      "price": 305.0,
-      "currency": "EUR",
+      "status": "non_trouve",
+      "matched_keyword": "",
+      "price": null,
+      "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-20T23:41:50.963529+02:00"
+      "checked_at": "2026-07-20T23:45:13.213574+02:00"
     },
     {
       "site": "Vinum.pro",
@@ -143,7 +143,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-20T23:41:50.963529+02:00"
+      "checked_at": "2026-07-20T23:45:13.213574+02:00"
     },
     {
       "site": "Vinum.pro",
@@ -155,7 +155,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-20T23:41:50.963529+02:00"
+      "checked_at": "2026-07-20T23:45:13.213574+02:00"
     },
     {
       "site": "Vinum.pro",
@@ -167,7 +167,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-20T23:41:50.963529+02:00"
+      "checked_at": "2026-07-20T23:45:13.213574+02:00"
     }
   ]
 }
