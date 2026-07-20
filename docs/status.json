@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-07-21T00:02:10.917515+02:00",
+  "checked_at": "2026-07-21T00:17:01.970363+02:00",
   "results": [
     {
       "site": "Chartreuse Diffusion (officiel)",
@@ -12,7 +12,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "La Compagnie des Bonnes Bouteilles — VEP Jaune",
@@ -25,7 +25,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "La Compagnie des Bonnes Bouteilles — Reine des Liqueurs",
@@ -38,7 +38,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Cave Spirituelle — Reine des Liqueurs",
@@ -51,7 +51,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Clos des Millésimes — Verte Jéroboam 3L",
@@ -64,7 +64,7 @@
       "price": 335.0,
       "currency": "EUR",
       "confidence": "structure",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Clos des Millésimes — VEP Jaune",
@@ -77,7 +77,7 @@
       "price": 290.0,
       "currency": "EUR",
       "confidence": "structure",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Rhône Magnum — Reine des Liqueurs",
@@ -90,7 +90,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Rhône Magnum — VEP Jaune",
@@ -103,7 +103,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Le Gros Caviste — VEP Jaune",
@@ -116,7 +116,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Le Gros Caviste — Jaune Jéroboam 3L",
@@ -129,7 +129,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Whisky Lodge — Jéroboams (toutes couleurs)",
@@ -142,7 +142,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Vinum.pro",
@@ -155,7 +155,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Vinum.pro",
@@ -168,7 +168,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Vinum.pro",
@@ -181,7 +181,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Bottle of Italy — Reine des Liqueurs",
@@ -194,7 +194,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Bottle of Italy — Jaune Jéroboam 3L",
@@ -207,7 +207,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Gallienoteca (Italie) — VEP Jaune",
@@ -220,7 +220,7 @@
       "price": 290.0,
       "currency": "EUR",
       "confidence": "structure",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Pedrelli (Italie) — VEP Jaune",
@@ -233,7 +233,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Gute-Weine / Lobenbergs (Allemagne) — VEP Jaune",
@@ -246,7 +246,7 @@
       "price": 299.0,
       "currency": "EUR",
       "confidence": "structure",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Bardealer (Allemagne) — VEP Jaune",
@@ -259,7 +259,7 @@
       "price": 284.89,
       "currency": "EUR",
       "confidence": "structure",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Kleine Abtei (Allemagne) — VEP Jaune",
@@ -272,7 +272,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Berlin Bottle (Allemagne) — VEP Jaune",
@@ -285,7 +285,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Beowein (Allemagne) — VEP Jaune",
@@ -298,7 +298,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Magnum de Vin (Espagne) — Jéroboams",
@@ -311,7 +311,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Clos des Millésimes ES — Jéroboam VEP Jaune 2015",
@@ -324,7 +324,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Vinoteca.online (Espagne) — Jaune Jéroboam",
@@ -337,7 +337,7 @@
       "price": 153.95,
       "currency": "EUR",
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "1898 Drinks Boutique (Espagne)",
@@ -350,7 +350,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "1898 Drinks Boutique (Espagne)",
@@ -363,7 +363,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "1898 Drinks Boutique (Espagne)",
@@ -376,7 +376,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Caviar Alexandre (Suisse) — VEP Jaune",
@@ -389,7 +389,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Le Caveau des Pépites — VEP Jaune (tous millésimes)",
@@ -402,7 +402,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Le Chais — VEP Jaune",
@@ -415,7 +415,7 @@
       "price": 590.0,
       "currency": "EUR",
       "confidence": "structure",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     },
     {
       "site": "Calais Vins — VEP Jaune",
@@ -428,7 +428,7 @@
       "price": null,
       "currency": null,
       "confidence": "heuristique",
-      "checked_at": "2026-07-21T00:02:10.917515+02:00"
+      "checked_at": "2026-07-21T00:17:01.970363+02:00"
     }
   ]
 }
