@@ -45,7 +45,8 @@ UNAVAILABLE_PATTERNS = [
 AVAILABLE_PATTERNS = [
     "ajouter au panier", "ajouter a mon panier", "add to basket",
     "add to cart", "in den warenkorb", "anadir al carrito",
-    "en stock", "disponible", "in stock",
+    "en stock", "disponible", "in stock", "disponibilite immediate",
+    "derniere piece", "dernieres pieces",
 ]
 
 WINDOW = 260  # nombre de caracteres regardes avant/apres le mot-cle
@@ -93,22 +94,23 @@ def analyze(html: str, keywords: list[str]) -> tuple[str, str]:
 def run_checks() -> list[dict]:
     config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
     targets = config["targets"]
-    sites = config["sites"]
+    watches = config["watches"]
     checked_at = datetime.now(ZoneInfo("Europe/Paris")).isoformat()
 
     results = []
-    for site in sites:
-        print(f"Verification: {site['name']}")
-        html = fetch(site["search_url"])
-        for target in targets:
+    for watch in watches:
+        print(f"Verification: {watch['site']}")
+        html = fetch(watch["url"])
+        for target_key in watch["targets"]:
+            target = targets[target_key]
             if html is None:
                 status, matched = "erreur", ""
             else:
                 status, matched = analyze(html, target["keywords"])
             results.append({
-                "site": site["name"],
-                "url": site["search_url"],
-                "target_key": target["key"],
+                "site": watch["site"],
+                "url": watch["url"],
+                "target_key": target_key,
                 "target_label": target["label"],
                 "status": status,
                 "matched_keyword": matched,
