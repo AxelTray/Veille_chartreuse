@@ -17,6 +17,7 @@ Strategie en deux temps, par ordre de confiance :
    un statut trompeur.
 """
 import json
+import os
 import re
 import sys
 import unicodedata
@@ -25,6 +26,9 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 import requests
+
+TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG_PATH = ROOT / "config" / "sites.json"
@@ -311,6 +315,51 @@ def run_checks() -> list[dict]:
     return results
 
 
+def result_key(r: dict) -> tuple:
+    """Identifiant stable d'un produit suivi a travers les runs, pour
+    detecter les transitions de statut (pas juste site+cible, un site peut
+    avoir plusieurs produits pour la meme cible)."""
+    return (r["site"], r["target_key"], r.get("product_name") or r.get("matched_keyword") or "")
+
+
+def find_newly_available(previous_results: list[dict], new_results: list[dict]) -> list[dict]:
+    previous_status = {result_key(r): r["status"] for r in previous_results}
+    newly = []
+    for r in new_results:
+        if r["status"] != "disponible":
+            continue
+        if previous_status.get(result_key(r)) != "disponible":
+            newly.append(r)
+    return newly
+
+
+def format_telegram_message(newly: list[dict]) -> str:
+    lines = ["🟡 <b>Chartreuse disponible !</b>"]
+    for r in newly:
+        name = r.get("product_name") or r["target_label"]
+        price = f" — {r['price']:.2f} {r['currency']}" if r.get("price") else ""
+        lines.append(f'\n<b>{r["site"]}</b>\n{name}{price}\n{r["url"]}')
+    return "\n".join(lines)
+
+
+def send_telegram_message(text: str) -> None:
+    if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
+        print("  [telegram] TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID absents, alerte non envoyee.")
+        return
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+    try:
+        resp = requests.post(url, json={
+            "chat_id": TELEGRAM_CHAT_ID,
+            "text": text,
+            "parse_mode": "HTML",
+            "disable_web_page_preview": True,
+        }, timeout=15)
+        resp.raise_for_status()
+        print("  [telegram] alerte envoyee.")
+    except requests.RequestException as exc:
+        print(f"  [telegram] erreur d'envoi: {exc}", file=sys.stderr)
+
+
 def load_json(path: Path, default):
     if path.exists():
         return json.loads(path.read_text(encoding="utf-8"))
@@ -342,8 +391,17 @@ def main() -> None:
         print("Pas encore ~21h a Paris, on ne fait rien cette fois-ci.")
         return
 
+    previous_results = load_json(STATUS_PATH, {}).get("results", [])
     results = run_checks()
     save_status_and_history(results)
+
+    newly_available = find_newly_available(previous_results, results)
+    if newly_available:
+        print(f"{len(newly_available)} nouvelle(s) disponibilite(s) -> envoi alerte Telegram")
+        send_telegram_message(format_telegram_message(newly_available))
+    else:
+        print("Aucune nouvelle disponibilite depuis le dernier check.")
+
     print("Termine. docs/status.json et docs/history.json mis a jour.")
 
 
