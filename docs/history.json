@@ -220,5 +220,218 @@
         "checked_at": "2026-07-20T23:07:04.258587+02:00"
       }
     ]
+  },
+  {
+    "checked_at": "2026-07-20T23:20:10.842911+02:00",
+    "available_count": 0,
+    "results": [
+      {
+        "site": "Chartreuse Diffusion (officiel)",
+        "url": "https://www.chartreuse.fr/en/produit/chartreuse-vep-yellow/",
+        "target_key": "vep_jaune",
+        "target_label": "Chartreuse Jaune VEP",
+        "status": "a_verifier",
+        "matched_keyword": "vep jaune",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      },
+      {
+        "site": "La Compagnie des Bonnes Bouteilles",
+        "url": "https://lacompagniedesbonnesbouteilles.fr/distillerie/les-moines-chartreux/",
+        "target_key": "vep_jaune",
+        "target_label": "Chartreuse Jaune VEP",
+        "status": "a_verifier",
+        "matched_keyword": "vep jaune",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      },
+      {
+        "site": "La Compagnie des Bonnes Bouteilles",
+        "url": "https://lacompagniedesbonnesbouteilles.fr/distillerie/les-moines-chartreux/",
+        "target_key": "reine_des_liqueurs",
+        "target_label": "Reine des Liqueurs",
+        "status": "a_verifier",
+        "matched_keyword": "reine des liqueurs",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      },
+      {
+        "site": "La Compagnie des Bonnes Bouteilles",
+        "url": "https://lacompagniedesbonnesbouteilles.fr/distillerie/les-moines-chartreux/",
+        "target_key": "jeroboam",
+        "target_label": "Jéroboam (toutes couleurs)",
+        "status": "non_trouve",
+        "matched_keyword": "",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      },
+      {
+        "site": "Cave Spirituelle — VEP Jaune Jéroboam 3L",
+        "url": "https://www.cave-spirituelle.com/liqueur-chartreuse-vep-jaune-jeroboam-3-l.html",
+        "target_key": "jeroboam",
+        "target_label": "Jéroboam (toutes couleurs)",
+        "status": "erreur",
+        "matched_keyword": "",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      },
+      {
+        "site": "Cave Spirituelle — VEP Verte Jéroboam 3L",
+        "url": "https://www.cave-spirituelle.com/liqueur-chartreuse-vep-verte-jeroboam-3-l.html",
+        "target_key": "jeroboam",
+        "target_label": "Jéroboam (toutes couleurs)",
+        "status": "erreur",
+        "matched_keyword": "",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      },
+      {
+        "site": "Cave Spirituelle — Reine des Liqueurs",
+        "url": "https://www.cave-spirituelle.com/chartreuse-reine-des-liqueurs-mise-2024.html",
+        "target_key": "reine_des_liqueurs",
+        "target_label": "Reine des Liqueurs",
+        "status": "erreur",
+        "matched_keyword": "",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      },
+      {
+        "site": "Clos des Millésimes — Verte Jéroboam 3L",
+        "url": "https://www.closdesmillesimes.com/chartreuse-verte-jeroboam-mise-2025.html",
+        "target_key": "jeroboam",
+        "target_label": "Jéroboam (toutes couleurs)",
+        "status": "a_verifier",
+        "matched_keyword": "jeroboam",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      },
+      {
+        "site": "Clos des Millésimes — VEP Jaune",
+        "url": "https://www.closdesmillesimes.com/chartreuse-vep-jaune-1-litre-mise-2024.html",
+        "target_key": "vep_jaune",
+        "target_label": "Chartreuse Jaune VEP",
+        "status": "a_verifier",
+        "matched_keyword": "vep jaune",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      },
+      {
+        "site": "Rhône Magnum — Reine des Liqueurs",
+        "url": "https://venteenligne.rhone-magnum.fr/4403-liqueur-reine-des-liqueurs-2026-chartreuse-43-70cl",
+        "target_key": "reine_des_liqueurs",
+        "target_label": "Reine des Liqueurs",
+        "status": "a_verifier",
+        "matched_keyword": "reine des liqueurs",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      },
+      {
+        "site": "Rhône Magnum — VEP Jaune",
+        "url": "https://venteenligne.rhone-magnum.fr/1554-liqueur-jaune-vep-2024-chartreuse-42-100cl",
+        "target_key": "vep_jaune",
+        "target_label": "Chartreuse Jaune VEP",
+        "status": "a_verifier",
+        "matched_keyword": "jaune vep",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      },
+      {
+        "site": "Le Gros Caviste",
+        "url": "https://legroscaviste.com/brand/62-chartreuse-peres-chartreux",
+        "target_key": "vep_jaune",
+        "target_label": "Chartreuse Jaune VEP",
+        "status": "a_verifier",
+        "matched_keyword": "vep jaune",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      },
+      {
+        "site": "Le Gros Caviste",
+        "url": "https://legroscaviste.com/brand/62-chartreuse-peres-chartreux",
+        "target_key": "reine_des_liqueurs",
+        "target_label": "Reine des Liqueurs",
+        "status": "non_trouve",
+        "matched_keyword": "",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      },
+      {
+        "site": "Le Gros Caviste",
+        "url": "https://legroscaviste.com/brand/62-chartreuse-peres-chartreux",
+        "target_key": "jeroboam",
+        "target_label": "Jéroboam (toutes couleurs)",
+        "status": "a_verifier",
+        "matched_keyword": "jeroboam",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      },
+      {
+        "site": "Whisky Lodge",
+        "url": "https://whiskylodge.com/en/507-chartreuse",
+        "target_key": "vep_jaune",
+        "target_label": "Chartreuse Jaune VEP",
+        "status": "non_trouve",
+        "matched_keyword": "",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      },
+      {
+        "site": "Whisky Lodge",
+        "url": "https://whiskylodge.com/en/507-chartreuse",
+        "target_key": "reine_des_liqueurs",
+        "target_label": "Reine des Liqueurs",
+        "status": "non_trouve",
+        "matched_keyword": "",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      },
+      {
+        "site": "Whisky Lodge",
+        "url": "https://whiskylodge.com/en/507-chartreuse",
+        "target_key": "jeroboam",
+        "target_label": "Jéroboam (toutes couleurs)",
+        "status": "a_verifier",
+        "matched_keyword": "jeroboam",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      },
+      {
+        "site": "Vinum.pro",
+        "url": "https://vinum.pro/boutique/spiritueux/liqueur-creme/chartreuse-1605/",
+        "target_key": "vep_jaune",
+        "target_label": "Chartreuse Jaune VEP",
+        "status": "non_trouve",
+        "matched_keyword": "",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      },
+      {
+        "site": "Vinum.pro",
+        "url": "https://vinum.pro/boutique/spiritueux/liqueur-creme/chartreuse-1605/",
+        "target_key": "reine_des_liqueurs",
+        "target_label": "Reine des Liqueurs",
+        "status": "non_trouve",
+        "matched_keyword": "",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      },
+      {
+        "site": "Vinum.pro",
+        "url": "https://vinum.pro/boutique/spiritueux/liqueur-creme/chartreuse-1605/",
+        "target_key": "jeroboam",
+        "target_label": "Jéroboam (toutes couleurs)",
+        "status": "non_trouve",
+        "matched_keyword": "",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      },
+      {
+        "site": "La Maison du Whisky",
+        "url": "https://www.whisky.fr/en/b/chartreuse-1010",
+        "target_key": "vep_jaune",
+        "target_label": "Chartreuse Jaune VEP",
+        "status": "non_trouve",
+        "matched_keyword": "",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      },
+      {
+        "site": "La Maison du Whisky",
+        "url": "https://www.whisky.fr/en/b/chartreuse-1010",
+        "target_key": "reine_des_liqueurs",
+        "target_label": "Reine des Liqueurs",
+        "status": "non_trouve",
+        "matched_keyword": "",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      },
+      {
+        "site": "La Maison du Whisky",
+        "url": "https://www.whisky.fr/en/b/chartreuse-1010",
+        "target_key": "jeroboam",
+        "target_label": "Jéroboam (toutes couleurs)",
+        "status": "non_trouve",
+        "matched_keyword": "",
+        "checked_at": "2026-07-20T23:20:10.842911+02:00"
+      }
+    ]
   }
 ]
